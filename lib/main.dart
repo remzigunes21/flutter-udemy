@@ -1,13 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learn/HomeScreen.dart';
-import 'package:learn/inputs/glbal_key.dart';
-import 'package:learn/inputs/text_field.dart';
-import 'package:learn/inputs/text_form_field.dart';
-import 'package:learn/listeler/sliver_app_bar.dart';
-import 'package:learn/navigation/about.dart';
-import 'package:learn/navigation/detail.dart';
-import 'package:learn/navigation/home.dart';
+import 'package:learn/inputs/stepper.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primaryColor: Colors.pinkAccent, accentColor: Colors.purple),
-      home: GlobalKeyApp(),
+      home: StepperApp(),
       // routes: {
       //   //route map api
       //   "/": (context) => TextFieldApp(),
