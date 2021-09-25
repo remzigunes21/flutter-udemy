@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learn/inputs/stepper.dart';
+import 'package:learn/tasarimKolaylastiran/custom_fonnts.dart';
+import 'package:learn/tasarimKolaylastiran/drawer.dart';
+import 'package:learn/tasarimKolaylastiran/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primaryColor: Colors.pinkAccent, accentColor: Colors.purple),
-      home: StepperApp(),
+      home: Home(),
       // routes: {
       //   //route map api
       //   "/": (context) => TextFieldApp(),
