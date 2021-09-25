@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn/tasarimKolaylastiran/bottomScreen/busines_bottom.dart';
 import 'package:learn/tasarimKolaylastiran/bottomScreen/home_bottom.dart';
+import 'package:learn/tasarimKolaylastiran/bottomScreen/page_view_examp.dart';
 import 'package:learn/tasarimKolaylastiran/bottomScreen/school_bottom.dart';
 import 'package:learn/tasarimKolaylastiran/bottomScreen/search_bottom.dart';
 import 'package:learn/tasarimKolaylastiran/bottomScreen/settings_bottom.dart';
@@ -20,22 +21,27 @@ class _HomeState extends State<Home> {
   SettingsBottom settingsBottom;
   SchoolBottom schoolBottom;
   BusinesBottom businesBottom;
+  PageViewApp pageViewApp;
+
+  var keyHome = PageStorageKey("key_home");
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    homeBottom = HomeBottom();
+    homeBottom = HomeBottom(keyHome);
     searchBottom = SearchBottom();
     settingsBottom = SettingsBottom();
     schoolBottom = SchoolBottom();
     businesBottom = BusinesBottom();
+    pageViewApp = PageViewApp();
 
     tumSayfalar = [
       homeBottom,
       searchBottom,
       settingsBottom,
       businesBottom,
-      schoolBottom
+      schoolBottom,
+      pageViewApp
     ];
   }
 
@@ -53,7 +59,9 @@ class _HomeState extends State<Home> {
           });
         },
       ),
-      body: tumSayfalar[_selectedItem],
+      body: _selectedItem <= tumSayfalar.length - 1
+          ? tumSayfalar[_selectedItem]
+          : tumSayfalar[0],
     );
   }
 }
